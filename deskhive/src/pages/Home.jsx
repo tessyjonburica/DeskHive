@@ -3,6 +3,7 @@ import NavBar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
 import Clients from "../components/Clients";
+import DeskSelection from "../components/DeskSelection";
 
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
       <Hero />
       <Features />
       <Clients />
+      <DeskSelection />
     </>
   );
 }

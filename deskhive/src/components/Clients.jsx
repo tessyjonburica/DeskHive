@@ -1,19 +1,22 @@
 import React from 'react'
+import google from '../assets/google.png';
+import microsoft from '../assets/microsoft.png';
+import facebook from '../assets/facebook.png';
 
 function Clients() {
   return (
-    <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-7xl px-6 lg:px-8 my-20">
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
-          { name: 'Google', image: 'https://logos-world.net/wp-content/uploads/2021/07/Google-Logo-2021.png' },
-          { name: 'Microsoft', image: 'https://logos-world.net/wp-content/uploads/2021/05/Microsoft-Logo.png' },
-          { name: 'Facebook', image: 'https://logos-world.net/wp-content/uploads/2021/05/Facebook-Logo.png' },
-        ].map((client, index) => (
+          { name: 'Google', image: google },
+          { name: 'Microsoft', image: microsoft },
+          { name: 'Facebook', image: facebook },
+        ].map((client, index) =>
           <div key={index} className="w-full rounded-xl bg-gray-100 p-4">
             <img src={client.image} alt={client.name} className="w-full h-auto mx-auto" />
             <div className="text-center mt-4 text-gray-500">{client.name}</div>
           </div>
-        ))}
+        )}
       </div>
     </div>
   )

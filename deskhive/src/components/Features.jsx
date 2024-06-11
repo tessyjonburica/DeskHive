@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 function Features() {
   return (
     <div className=" py-16 mt-12 sm:py-11">
@@ -19,7 +21,7 @@ function Features() {
         </div>
         <div>
           <img
-            src="https://picsum.photos/800/400?random"
+            src="https://picsum.photos/800/500?random"
             alt="Features"
             className="w-full rounded-xl"
           />
