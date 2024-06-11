@@ -11,11 +11,11 @@ function Features() {
             Available Features
           </h2>
           <ul className="mt-4 text-lg text-gray-500 list-disc list-inside">
-            <li>Seat Reservation</li>
-            <li>Appointment Booking</li>
-            <li>User Management</li>
-            <li>Seat Management</li>
+            <li>Real-time Desk Booking</li>
+            <li>Flexible Membership Tiers</li>
+            <li>Discounts on Extended Bookings</li>
             <li>Booking Management</li>
+            <li>Secure and Easy Payment</li>
             <li>Report Generation</li>
           </ul>
         </div>
