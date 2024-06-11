@@ -1,120 +1,110 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Label, TextInput } from "flowbite-react";
 
 function DeskSelection() {
   const [selectedDesk, setSelectedDesk] = useState(null);
   const [selectedMembership, setSelectedMembership] = useState(null);
-  const [teamSize, setTeamSize] = useState(2);
-  const [fixedPrice, setFixedPrice] = useState(100);
 
   const desks = [
-    {
-      id: 1,
-      name: "Individual Desk",
-      capacity: { basic: 2, premium: 4, executive: 6 },
-      status: "Occupied",
-    },
-    {
-      id: 2,
-      name: "Team Desk",
-      capacity: { basic: 1, premium: 2, executive: 3 },
-      status: "Available",
-    },
+    { id: 1, name: "Individual Desk", status: "Available" },
+    { id: 2, name: "Team Desk", status: "Available" },
   ];
 
   const memberships = [
-    { name: "Basic", capacity: 2 },
-    { name: "Premium", capacity: 4 },
-    { name: "Executive", capacity: 6 },
+    { name: "Basic", price: 100, features: ["24/7 Access", "Free Coffee", "High-Speed Internet"] },
+    { name: "Premium", price: 200, features: ["Private Cabin", "Free Coffee", "High-Speed Internet"] },
+    { name: "Executive", price: 300, features: ["Personal Assistant", "Private Cabin", "High-Speed Internet"] },
   ];
+
+  const teamFeatures = ["Meeting Room Access", "Dedicated Support", "Flexible Desks"];
 
   const handleDeskSelection = (desk) => {
     setSelectedDesk(desk);
+    setSelectedMembership(null); // Reset membership when desk type changes
   };
 
   const handleMembershipSelection = (membership) => {
     setSelectedMembership(membership);
   };
 
-  const handleTeamSizeChange = (e) => {
-    const newTeamSize = parseInt(e.target.value);
-    setTeamSize(newTeamSize);
-    setFixedPrice(newTeamSize * 100);
-  };
-
   return (
     <div className="flex flex-col items-center p-12 bg-green-100">
-      <h1 className="text-4xl font-bold mb-4 text-blue-600">
-        Desk Selection
-      </h1>
-      <p className="text-gray-500 mb-8">
+      <h1 className="text-4xl font-bold mb-4 text-blue-500">Desk Selection</h1>
+      <p className="text-gray-700 mb-8">
         Choose a desk and membership to reserve or book an appointment
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
         {desks.map((desk) => (
           <div
             key={desk.id}
-            className={`p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ${
-              selectedDesk && selectedDesk.id === desk.id
-                ? "opacity-50"
-                : ""
+            className={`p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer ${
+              selectedDesk && selectedDesk.id === desk.id ? "ring-4 ring-blue-300" : ""
             }`}
             onClick={() => handleDeskSelection(desk)}
           >
-            <h2 className="text-2xl font-bold mb-2">{desk.name}</h2>
-            {desk.capacity && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {memberships.map((membership) => (
-                  <div
-                    key={membership.name}
-                    className={`p-2 bg-gray-100 rounded-lg ${
-                      selectedMembership &&
-                      selectedMembership.name === membership.name
-                        ? "bg-blue-200"
-                        : ""
-                    }`}
-                    onClick={() => handleMembershipSelection(membership)}
-                  >
-                    {membership.name} - Available:{" "}
-                    {desk.capacity[membership.name]}
-                  </div>
-                ))}
-              </div>
-            )}
+            <h2 className="text-2xl font-bold mb-2 text-gray-800">{desk.name}</h2>
+            <p className={`text-lg font-semibold ${desk.status === "Available" ? "text-green-600" : "text-red-600"}`}>
+              Status: {desk.status}
+            </p>
           </div>
         ))}
       </div>
-      {selectedDesk && selectedMembership && (
-        <div className="mt-12">
-          <h2 className="text-3xl font-bold mb-4">Selected Desk</h2>
-          <p className="text-xl font-medium mb-2">
-            {selectedDesk.name} -{" "}
-            <span className="font-normal text-gray-500">{selectedMembership.name}</span>
-          </p>
-          {selectedDesk.id === 2 && (
-            <>
-              <div className="flex flex-col gap-2">
-                <Label className="mb-2" htmlFor="team-size">
-                  Team Size
-                </Label>
-                <TextInput
-                  id="team-size"
-                  type="number"
-                  value={teamSize}
-                  onChange={handleTeamSizeChange}
-                  className="w-24"
-                />
-                <p className="text-gray-500 mt-4">
-                  Fixed Price: ${fixedPrice}
-                </p>
+      {selectedDesk && selectedDesk.id === 1 && (
+        <div className="mt-8 w-full">
+          <h2 className="text-3xl font-bold mb-4 text-blue-500">Membership Tiers</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {memberships.map((membership) => (
+              <div
+                key={membership.name}
+                className={`p-6 bg-gray-50 border border-gray-200 rounded-lg cursor-pointer shadow-md hover:shadow-lg transition-all duration-300 ${
+                  selectedMembership && selectedMembership.name === membership.name
+                    ? "bg-blue-200"
+                    : ""
+                }`}
+                onClick={() => handleMembershipSelection(membership)}
+              >
+                <h3 className="text-2xl font-semibold mb-2 text-gray-800">{membership.name}</h3>
+                <p className="text-xl font-medium mb-4 text-gray-700">Price: ${membership.price}</p>
+                <ul className="list-disc list-inside text-left text-lg text-gray-700">
+                  {membership.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
               </div>
-            </>
+            ))}
+          </div>
+        </div>
+      )}
+      {selectedDesk && selectedDesk.id === 2 && (
+        <div className="mt-8 w-full flex justify-center">
+          <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
+            <h2 className="text-3xl font-bold mb-4 text-blue-500">Team Desk</h2>
+            <p className="text-xl font-medium mb-4 text-gray-700">Fixed Price: $35</p>
+            <ul className="list-disc list-inside text-left text-lg text-gray-700">
+              {teamFeatures.map((feature, index) => (
+                <li key={index}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+      {selectedDesk && selectedMembership && (
+        <div className="mt-12 text-center">
+          <h2 className="text-3xl font-bold mb-4 text-blue-500">Selected Desk</h2>
+          <p className="text-xl font-medium mb-2 text-gray-800">
+            {selectedDesk.name}
+            {selectedMembership && (
+              <span className="font-normal text-gray-700"> - {selectedMembership.name}</span>
+            )}
+          </p>
+          {selectedDesk.id === 1 && selectedMembership && (
+            <p className="text-lg font-semibold text-gray-700">Price: ${selectedMembership.price}</p>
           )}
-          {selectedDesk.id !== 2 && (
-            <p className="text-gray-500">
-              Available Seats: {selectedDesk.capacity[selectedMembership.name]}
-            </p>
+          {selectedDesk.id === 2 && (
+            <p className="text-lg font-semibold text-gray-700">Fixed Price: $35</p>
           )}
+          <button className="mt-6 px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300">
+            Book Now
+          </button>
         </div>
       )}
     </div>
@@ -123,3 +113,96 @@ function DeskSelection() {
 
 export default DeskSelection;
 
+
+// import React, { useState } from "react";
+// import { useHistory } from "react-router-dom"; // Use this if you're using react-router for navigation
+
+// function DeskSelection() {
+//   const history = useHistory(); // Use history to navigate to the booking page
+
+//   const desks = [
+//     { id: 1, name: "Individual Desk", status: "Available" },
+//     { id: 2, name: "Team Desk", status: "Available" },
+//   ];
+
+//   const memberships = [
+//     { name: "Basic", price: 100, features: ["24/7 Access", "Free Coffee", "High-Speed Internet"] },
+//     { name: "Premium", price: 200, features: ["Private Cabin", "Free Coffee", "High-Speed Internet"] },
+//     { name: "Executive", price: 300, features: ["Personal Assistant", "Private Cabin", "High-Speed Internet"] },
+//   ];
+
+//   const teamFeatures = ["Meeting Room Access", "Dedicated Support", "Flexible Desks"];
+
+//   const handleBooking = (desk, membership = null) => {
+//     history.push({
+//       pathname: '/booking',
+//       state: { desk, membership }
+//     });
+//   };
+
+//   return (
+//     <div className="flex flex-col items-center p-12 bg-green-100">
+//       <h1 className="text-4xl font-bold mb-4 text-blue-500">Desk Selection</h1>
+//       <p className="text-gray-700 mb-8">
+//         Choose a desk and membership to reserve or book an appointment
+//       </p>
+//       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+//         {desks.map((desk) => (
+//           <div
+//             key={desk.id}
+//             className={`p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer ${
+//               selectedDesk && selectedDesk.id === desk.id ? "ring-4 ring-blue-300" : ""
+//             }`}
+//           >
+//             <h2 className="text-2xl font-bold mb-2 text-gray-800">{desk.name}</h2>
+//             <p className={`text-lg font-semibold ${desk.status === "Available" ? "text-green-600" : "text-red-600"}`}>
+//               Status: {desk.status}
+//             </p>
+//             {desk.id === 1 && (
+//               <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4">
+//                 {memberships.map((membership) => (
+//                   <div
+//                     key={membership.name}
+//                     className="p-4 bg-gray-50 border border-gray-200 rounded-lg shadow-md"
+//                   >
+//                     <h3 className="text-xl font-semibold mb-2 text-gray-800">{membership.name}</h3>
+//                     <p className="text-lg font-medium mb-4 text-gray-700">Price: ${membership.price}</p>
+//                     <ul className="list-disc list-inside text-left text-lg text-gray-700">
+//                       {membership.features.map((feature, index) => (
+//                         <li key={index}>{feature}</li>
+//                       ))}
+//                     </ul>
+//                     <button
+//                       className="mt-4 px-4 py-2 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300 w-full"
+//                       onClick={() => handleBooking(desk, membership)}
+//                     >
+//                       Book Now
+//                     </button>
+//                   </div>
+//                 ))}
+//               </div>
+//             )}
+//             {desk.id === 2 && (
+//               <div className="mt-4">
+//                 <p className="text-lg font-medium mb-4 text-gray-700">Fixed Price: $35</p>
+//                 <ul className="list-disc list-inside text-left text-lg text-gray-700">
+//                   {teamFeatures.map((feature, index) => (
+//                     <li key={index}>{feature}</li>
+//                   ))}
+//                 </ul>
+//                 <button
+//                   className="mt-4 px-4 py-2 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300 w-full"
+//                   onClick={() => handleBooking(desk)}
+//                 >
+//                   Book Now
+//                 </button>
+//               </div>
+//             )}
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default DeskSelection;
