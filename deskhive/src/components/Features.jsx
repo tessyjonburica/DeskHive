@@ -1,30 +1,32 @@
 import React from "react";
 
-
-
 function Features() {
   return (
-    <div className=" py-16 mt-12 sm:py-11">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
+    <div className="bg-white py-16 mt-12 sm:py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="text-center">
           <h2 className="text-4xl font-bold leading-9 tracking-tight text-gray-900">
             Available Features
           </h2>
-          <ul className="mt-4 text-lg text-gray-500 list-disc list-inside">
-            <li>Real-time Desk Booking</li>
-            <li>Flexible Membership Tiers</li>
-            <li>Discounts on Extended Bookings</li>
-            <li>Booking Management</li>
-            <li>Secure and Easy Payment</li>
-            <li>Report Generation</li>
-          </ul>
         </div>
-        <div>
-          <img
-            src="https://picsum.photos/800/500?random"
-            alt="Features"
-            className="w-full rounded-xl"
-          />
+        <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
+          <div className="flex flex-col justify-center">
+            <ul className="text-lg text-gray-600 list-disc list-inside space-y-4">
+              <li>Real-time Desk Booking</li>
+              <li>Flexible Membership Tiers</li>
+              <li>Discounts on Extended Bookings</li>
+              <li>Booking Management</li>
+              <li>Secure and Easy Payment</li>
+              <li>Report Generation</li>
+            </ul>
+          </div>
+          <div className="flex justify-center items-center">
+            <img
+              src="src/assets/workspace.jpg" // Replace with the actual image URL
+              alt="Features"
+              className="w-full max-w-md rounded-xl shadow-lg"
+            />
+          </div>
         </div>
       </div>
     </div>

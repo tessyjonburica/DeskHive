@@ -6,28 +6,29 @@ import Layout from "./pages/Layout";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import NoPage from "./pages/NoPage";
+import DeskSelection from "./components/DeskSelection";
+import BookingDetails from "./pages/Booking";
 
 function App() {
   return (
-    <>
-      {/* <Home /> */}
-      {/* <Contact /> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="services" element={<Services/>} />
-            <Route path="*" element={<NoPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="services" element={<Services />} />
+          <Route path="desk-selection" element={<DeskSelection />} />
+          <Route path="booking" element={<BookingDetails />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
 
 
 
