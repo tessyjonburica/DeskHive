@@ -1,5 +1,5 @@
 import React from "react";
-import hero from '/assets/workspace.jpg'
+import hero from 'src/assets/workspace.jpg'
 
 
 function Hero() {
