@@ -17,7 +17,7 @@ function Hero() {
           </div>
           <div className="mt-5 md:mt-0 md:flex-1 lg:ml-8">
             <img
-              src="https://picsum.photos/800?random"
+              src="./src/assets/workspace.jpg"
               alt="Seat Reservation and Booking"
               className="w-full rounded-xl"
             />
