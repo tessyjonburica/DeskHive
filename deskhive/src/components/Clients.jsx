@@ -1,7 +1,7 @@
 import React from 'react'
-import google from '../../assets/google.png';
-import microsoft from '../../assets/microsoft.png';
-import facebook from '../../assets/workspace.jpg';
+import google from '/assets/google.png';
+import microsoft from '/assets/microsoft.png';
+import facebook from '/assets/workspace.jpg';
 
 function Clients() {
   return (
