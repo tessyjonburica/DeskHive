@@ -4,7 +4,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import About from "./pages/About";
-import Services from "./pages/Services";
+import Services from "./components/Services";
 import NoPage from "./pages/NoPage";
 import DeskSelection from "./components/DeskSelection";
 import BookingDetails from "./pages/Booking";

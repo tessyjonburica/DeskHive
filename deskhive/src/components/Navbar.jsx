@@ -5,7 +5,7 @@ function NavBar() {
   return (
     <Navbar fluid style={{ position: "sticky", top: '0',  }}>
       <Navbar.Brand href="/">
-        <span className="self-center whitespace-nowrap text-xl font-bold text-blue-800 dark:text-white">
+        <span className="self-center whitespace-nowrap text-xl font-bold text-blue-700 dark:text-white">
           DeskHive
         </span>
       </Navbar.Brand>

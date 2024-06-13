@@ -22,7 +22,7 @@ function Features() {
           </div>
           <div className="flex justify-center items-center">
             <img
-              src="./src/assets/workspace.jpg" // Replace with the actual image URL
+              src="./src/assets/workspace.jpg"
               alt="Features"
               className="w-full max-w-md rounded-xl shadow-lg"
             />

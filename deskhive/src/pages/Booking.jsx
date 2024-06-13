@@ -7,10 +7,10 @@ function BookingDetails() {
 
   return (
     <div className="flex flex-col items-center p-12 bg-green-100">
-      <h1 className="text-4xl font-bold mb-4 text-blue-500">Booking Details</h1>
+      <h1 className="text-4xl font-bold mb-4 text-blue-700">Booking Details</h1>
       {desk && membership ? (
         <div className="mt-8 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-blue-500">Selected Desk</h2>
+          <h2 className="text-3xl font-bold mb-4 text-blue-700">Selected Desk</h2>
           <p className="text-xl font-medium mb-2 text-gray-800">
             {desk.name}
             {membership && (

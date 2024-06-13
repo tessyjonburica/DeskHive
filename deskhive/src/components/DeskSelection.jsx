@@ -34,7 +34,7 @@ function DeskSelection() {
 
   return (
     <div className="flex flex-col items-center p-12 bg-green-100">
-      <h1 className="text-4xl font-bold mb-4 text-blue-500">Desk Selection</h1>
+      <h1 className="text-4xl font-bold mb-4 text-blue-700">Desk Selection</h1>
       <p className="text-gray-700 mb-8">
         Choose a desk and membership to reserve or book an appointment
       </p>
@@ -48,15 +48,15 @@ function DeskSelection() {
             onClick={() => handleDeskSelection(desk)}
           >
             <h2 className="text-2xl font-bold mb-2 text-gray-800">{desk.name}</h2>
-            <p className={`text-lg font-semibold ${desk.status === "Available" ? "text-green-600" : "text-red-600"}`}>
-              Status: {desk.status}
+            <p className={`text-lg font-semibold flex ${desk.status === "Available" ? "text-green-600" : "text-red-600"}`}>
+              <div className={`p-3 ${desk.status === "Available" ? "bg-green-400" : "bg-red-400"} border rounded-full me-2`}></div>{desk.status}
             </p>
           </div>
         ))}
       </div>
       {selectedDesk && selectedDesk.id === 1 && (
         <div className="mt-8 w-full">
-          <h2 className="text-3xl font-bold mb-4 text-blue-500">Membership Tiers</h2>
+          <h2 className="text-3xl font-bold mb-4 text-blue-700">Membership Tiers</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             {memberships.map((membership) => (
               <div
@@ -83,7 +83,7 @@ function DeskSelection() {
       {selectedDesk && selectedDesk.id === 2 && (
         <div className="mt-8 w-full flex justify-center">
           <div className="p-6 bg-gray-50 border border-gray-200 rounded-lg shadow-md w-full sm:w-1/2 md:w-1/3">
-            <h2 className="text-3xl font-bold mb-4 text-blue-500">Team Desk</h2>
+            <h2 className="text-3xl font-bold mb-4 text-blue-700">Team Desk</h2>
             <p className="text-xl font-medium mb-4 text-gray-700">Fixed Price: $35</p>
             <ul className="list-disc list-inside text-left text-lg text-gray-700">
               {teamFeatures.map((feature, index) => (
@@ -95,7 +95,7 @@ function DeskSelection() {
       )}
       {selectedDesk && selectedMembership && (
         <div className="mt-12 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-blue-500">Selected Desk</h2>
+          <h2 className="text-3xl font-bold mb-4 text-blue-700">Selected Desk</h2>
           <p className="text-xl font-medium mb-2 text-gray-800">
             {selectedDesk.name}
             {selectedMembership && (
