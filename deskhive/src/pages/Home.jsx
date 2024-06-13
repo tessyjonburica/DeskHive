@@ -15,7 +15,6 @@ function Home() {
       {/* <Features /> */}
       {/* <Clients /> */}
       <DeskSelection />
-      <BookingDetails/>
       <Services/>
     </>
   );
