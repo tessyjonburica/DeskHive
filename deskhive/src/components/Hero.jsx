@@ -1,4 +1,6 @@
 import React from "react";
+import hero from '../../assets/workspace.jpg'
+
 
 function Hero() {
   return (
@@ -17,7 +19,7 @@ function Hero() {
           </div>
           <div className="mt-5 md:mt-0 md:flex-1 lg:ml-8">
             <img
-              src="/assets/workspace.jpg"
+              src={hero}
               alt="Seat Reservation and Booking"
               className="w-full rounded-xl"
             />
