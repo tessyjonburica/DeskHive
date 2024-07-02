@@ -85,7 +85,7 @@ function Services() {
             key={index}
             className="p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
           >
-            <h2 className="text-2xl font-bold mb-4 text-gray-800">{service.title}</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-700">{service.title}</h2>
             <p className="text-lg text-gray-700 mb-4">{service.description}</p>
             <ul className="list-none text-left text-lg text-gray-700 space-y-2">
               {service.features.map((feature, idx) => (

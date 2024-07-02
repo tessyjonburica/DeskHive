@@ -1,5 +1,5 @@
 import React from "react";
-import hero from 'src/assets/workspace.jpg'
+import hero from '../assets/workspace.jpg'
 
 
 function Hero() {
@@ -8,7 +8,7 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <div className="md:flex-1">
-            <h2 className="text-4xl font-bold leading-9  text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold leading-9  text-gray-700">
               Reserve Your Perfect Workspace with DeskHive
             </h2>
             <p className="mt-4 text-lg text-gray-500">

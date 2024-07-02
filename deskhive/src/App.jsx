@@ -7,7 +7,8 @@ import About from "./pages/About";
 import Services from "./components/Services";
 import NoPage from "./pages/NoPage";
 import DeskSelection from "./components/DeskSelection";
-import BookingDetails from "./pages/Booking";
+// import BookingDetails from "./pages/Booking";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="services" element={<Services />} />
           <Route path="desk-selection" element={<DeskSelection />} />
-          <Route path="booking" element={<BookingDetails />} />
+          <Route path="checkout" element={<Checkout/>} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
