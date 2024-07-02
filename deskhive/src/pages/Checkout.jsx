@@ -6,8 +6,8 @@ function Checkout() {
   const navigate = useNavigate();
   const { desk, membership } = state;
 
-  const hours = 4; // Example: Assume the user is booking for 4 hours
-  const basePrice = desk.id === 1 ? membership.price * hours : 35 * hours;
+  const hours = 2; // Example: Assume the user is booking for 4 hours
+  const basePrice = desk.id === 1 ? membership.price * hours : 3 * hours;
   const discount = hours > 3 ? basePrice * 0.1 : 0;
   const totalPrice = basePrice - discount;
 

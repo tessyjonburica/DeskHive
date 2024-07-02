@@ -20,7 +20,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="services" element={<Services />} />
           <Route path="desk-selection" element={<DeskSelection />} />
-          <Route path="checkout" element={<Checkout/>} />
+          <Route path="booking" element={<Checkout/>} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

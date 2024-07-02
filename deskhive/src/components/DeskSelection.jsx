@@ -11,9 +11,9 @@ function DeskSelection() {
   ];
 
   const memberships = [
-    { name: "Basic", price: 100, features: ["24/7 Access", "Free Coffee", "High-Speed Internet"] },
-    { name: "Premium", price: 200, features: ["Private Cabin", "Free Coffee", "High-Speed Internet"] },
-    { name: "Executive", price: 300, features: ["Personal Assistant", "Private Cabin", "High-Speed Internet"] },
+    { name: "Basic", price: 15, features: ["24/7 Access", "Free Coffee", "High-Speed Internet"] },
+    { name: "Premium", price: 25, features: ["Private Cabin", "Free Coffee", "High-Speed Internet"] },
+    { name: "Executive", price: 35, features: ["Personal Assistant", "Private Cabin", "High-Speed Internet"] },
   ];
 
   const teamFeatures = ["Meeting Room Access", "Dedicated Support", "Flexible Desks", "Free Coffee"];
