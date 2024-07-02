@@ -23,7 +23,7 @@ function DeskSelection() {
   };
 
   const handleBooking = (membership) => {
-    navigate("/booking", { state: { desk: selectedDesk, membership } });
+    navigate("/checkout", { state: { desk: selectedDesk, membership } });
   };
 
   return (
