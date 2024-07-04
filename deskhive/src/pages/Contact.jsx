@@ -7,7 +7,7 @@ function Contact() {
     
     <div id="contact" className="mx-auto max-w-7xl">
       <div className=" p-5 sm:p-12">
-        <h2 className="text-2xl font-bold leading-9 tracking-tight text-gray-900 sm:text-3xl">Contact Us</h2>
+        <h2 className="text-4xl font-bold leading-9 tracking-tight text-blue-700 sm:text-3xl">Contact Us</h2>
         <p className="mt-4 text-lg text-gray-500">We are here to help you with any questions you may have.</p>
         <p className="mt-2 text-lg text-gray-500">Email us at <a href="mailto:support@deskhive.com" className="text-blue-600 hover:underline">support@deskhive.com</a></p>
         <form className="mt-8" action="#" method="POST">

@@ -71,7 +71,7 @@ function Checkout() {
           />
         </div>
         <div className="mb-4">
-          <h3 className="text-xl font-semibold text-gray-700">Fullmame</h3>
+          <h3 className="text-xl font-semibold text-gray-700">Fullname</h3>
           <input
             type="text"
             value={clientName}
