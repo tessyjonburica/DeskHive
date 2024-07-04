@@ -1,15 +1,14 @@
 import React from "react";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-8">
       <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-4 md:mb-0 text-center md:text-left">
+        <div className="mb-4 md:mb-0">
           <h4 className="text-lg font-semibold">Desk Hive</h4>
           <p className="text-sm">The ultimate workspace solution.</p>
         </div>
-        <div className="mb-4 md:mb-0 text-center md:text-left">
+        <div className="mb-4 md:mb-0">
           <h5 className="text-md font-semibold">Quick Links</h5>
           <ul className="list-none">
             <li>
@@ -29,7 +28,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="mb-4 md:mb-0 text-center md:text-left">
+        <div className="mb-4 md:mb-0">
           <h5 className="text-md font-semibold">Contact Us</h5>
           <p className="text-sm">1234 Desk Hive Lane</p>
           <p className="text-sm">Workspace City, WH 56789</p>
@@ -38,13 +37,13 @@ const Footer = () => {
         </div>
         <div className="flex space-x-4">
           <a href="https://facebook.com" className="hover:text-gray-400">
-            <FaFacebookF size={20} />
+            <i className="fab fa-facebook-f"></i>
           </a>
           <a href="https://twitter.com" className="hover:text-gray-400">
-            <FaTwitter size={20} />
+            <i className="fab fa-twitter"></i>
           </a>
           <a href="https://instagram.com" className="hover:text-gray-400">
-            <FaInstagram size={20} />
+            <i className="fab fa-instagram"></i>
           </a>
         </div>
       </div>
