@@ -29,7 +29,7 @@ function Confirmation() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-green-100 flex flex-col items-center p-12">
+    <div className="min-h-screen w-full bg-green-100 flex flex-col items-center p-4 sm:p-12">
       <h1 className="text-4xl font-bold mb-4 text-blue-700">Confirmation</h1>
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">Booking Details</h2>
@@ -43,16 +43,16 @@ function Confirmation() {
         )}
         <p className="text-lg text-gray-600 mb-4">Hours: {hours}</p>
         <p className="text-lg text-gray-600 mb-4">Total Price: ${totalPrice.toFixed(2)}</p>
-        <div className="flex justify-between mt-8">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-8">
           <button
-            className="px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
+            className="mb-4 w-full sm:w-auto px-6 py-3 bg-blue-500 text-white text-lg font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-300"
             onClick={generatePDF}
           >
             Download Receipt
           </button>
           <Link
             to="/"
-            className="px-6 py-3 bg-gray-300 text-gray-800 text-lg font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all duration-300"
+            className="w-full sm:w-auto px-6 py-3 bg-gray-300 text-center text-gray-800 text-lg font-semibold rounded-lg shadow-md hover:bg-gray-400 transition-all duration-300"
           >
             Back to Home
           </Link>
