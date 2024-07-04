@@ -10,14 +10,14 @@ function NavBar() {
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
-        <Button color={"blue"}>Get started</Button>
+        <Button href="#desk" color={"blue"}>Get started</Button>
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
         <Navbar.Link href="/">Home</Navbar.Link>
-        <Navbar.Link href="/about">About</Navbar.Link>
-        <Navbar.Link href="/services">Services</Navbar.Link>
-        <Navbar.Link href="/contact">Contact</Navbar.Link>
+        {/* <Navbar.Link href="#about">About</Navbar.Link> */}
+        <Navbar.Link href="#services">Services</Navbar.Link>
+        <Navbar.Link href="#contact">Contact</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

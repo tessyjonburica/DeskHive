@@ -6,16 +6,21 @@ import Hero from "../components/Hero";
 import DeskSelection from "../components/DeskSelection";
 // import BookingDetails from "./Booking";
 import Services from "../components/Services";
-
+import Contact from "./Contact"
+import About from "./About";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
     <>
       <Hero />
-      {/* <Features /> */}
-      {/* <Clients /> */}
       <DeskSelection />
       <Services/>
+      <Contact />
+      <Footer/>
+      {/* <Features /> */}
+      {/* <Clients /> */}
+      {/* <About/> */}
     </>
   );
 }

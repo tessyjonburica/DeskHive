@@ -77,7 +77,7 @@ const services = [
 
 function Services() {
   return (
-    <div className="flex flex-col items-center p-12 bg-gray-100">
+    <div id="services" className="flex flex-col items-center p-12 bg-gray-100">
       <h1 className="text-4xl font-bold mb-8 text-blue-700">Our Services</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (

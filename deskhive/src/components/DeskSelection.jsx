@@ -32,7 +32,7 @@ function DeskSelection() {
 };
 
   return (
-    <div className="flex flex-col items-center p-12 bg-green-100">
+    <div id="desk" className="flex flex-col items-center p-12 bg-green-100">
       <h1 className="text-4xl sm:text-4xl font-semibold sm:font-bold mb-4 text-blue-700">Desk Selection</h1>
       <p className="text-gray-700 mb-8">
         Choose a desk to reserve or book an appointment
