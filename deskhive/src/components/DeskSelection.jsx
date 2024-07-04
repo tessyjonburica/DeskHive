@@ -26,6 +26,11 @@ function DeskSelection() {
     navigate("/checkout", { state: { desk: selectedDesk, membership } });
   };
 
+  const handlePayment = () => {
+  // Logic for handling payment goes here
+  navigate("/confirmation", { state: { desk, membership, hours, totalPrice } });
+};
+
   return (
     <div className="flex flex-col items-center p-12 bg-green-100">
       <h1 className="text-4xl sm:text-4xl font-semibold sm:font-bold mb-4 text-blue-700">Desk Selection</h1>

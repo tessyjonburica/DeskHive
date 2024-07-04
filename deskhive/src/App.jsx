@@ -9,6 +9,7 @@ import NoPage from "./pages/NoPage";
 import DeskSelection from "./components/DeskSelection";
 // import BookingDetails from "./pages/Booking";
 import Checkout from "./pages/Checkout";
+import Confirmation from "./pages/Confirmation";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="desk-selection" element={<DeskSelection />} />
           <Route path="checkout" element={<Checkout/>} />
+          <Route path="confirmation" element={<Confirmation />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
