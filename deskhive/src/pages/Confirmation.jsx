@@ -30,7 +30,7 @@ function Confirmation() {
 
   return (
     <div className="min-h-screen w-full bg-green-100 flex flex-col items-center p-4 sm:p-12">
-      <h1 className="text-4xl font-bold mb-4 text-blue-700">Confirmation</h1>
+      <h1 className="text-4xl sm:text-3xl font-bold mb-4 text-blue-700">Confirmation</h1>
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">Booking Details</h2>
         <p className="text-lg text-gray-600 mb-4">Receipt Number: {receiptNumber}</p>
